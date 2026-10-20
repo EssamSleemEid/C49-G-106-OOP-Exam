@@ -391,7 +391,20 @@ namespace C49_G_106_OOP_Exam
         }
         static void Main(string[] args)
         {
-            
+            Subject subject = new Subject(1, "OOP");
+            subject.CreateExam();
+
+            Console.WriteLine("\nDo you want to start the Exam? (Y/N): ");
+            string choice = Console.ReadLine() ?? "";
+
+            if (choice.Equals("Y", StringComparison.OrdinalIgnoreCase))
+            {
+                subject.Exam.ShowExam();
+            }
+            else
+            {
+                Console.WriteLine("Exam cancelled");
+            }
         }
     }
 }
