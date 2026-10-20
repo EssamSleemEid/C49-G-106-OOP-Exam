@@ -86,6 +86,44 @@
                     return 1;
                 return Mark.CompareTo(other.Mark);
             }
+
+            public abstract void ShowQuestion();
+        }
+
+        public class MyMCQ : Question
+        {
+            public MyMCQ(string header, string body, int mark,Answer[] answers, Answer rightAnswer): base(header, body, mark, answers, rightAnswer)
+            {
+
+            }
+
+            public override void ShowQuestion()
+            {
+                Console.WriteLine(ToString());
+
+                foreach (Answer answer in Answers)
+                {
+                    Console.WriteLine(answer);
+                }
+            }
+        }
+
+        public class MyTrueFale : Question
+        {
+            public MyTrueFale(string header, string body, int mark, Answer[] answers, Answer rightAnswer): base(header, body, mark, answers, rightAnswer)
+            {
+
+            }
+
+            public override void ShowQuestion()
+            {
+                Console.WriteLine(ToString());
+
+                foreach (Answer answer in Answers)
+                {
+                    Console.WriteLine(answer);
+                }
+            }
         }
 
 
